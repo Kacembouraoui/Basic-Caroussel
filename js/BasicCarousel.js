@@ -56,9 +56,13 @@
 	  var slideNbr=$('#slider .slide').length;
 	  $('.pager ').append("<ul></ul>");
 	  for (i = 1; i < slideNbr+1; i++) { 
-	  
-         $('.pager ul').append('<li><a href="#'+i+'" ></a></li>');
-		   
+	     if(i==1)
+		 {
+            $('.pager ul').append('<li class="active"><a href="#'+i+'" ></a></li>');
+		 }else
+		 {
+           $('.pager ul').append('<li><a href="#'+i+'" ></a></li>');
+		 } 
        }
 	  
 	
