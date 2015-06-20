@@ -1,0 +1,52 @@
+	 #slider {
+  width: 560px;
+  overflow: hidden;
+  float: left;
+}
+
+#slider .slides {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 560px;
+    height:auto;
+}
+.pager {
+	  float: left;
+	  clear:both;
+}
+.pager ul {
+	  margin: 0px;
+	  padding: 0px;
+	  float: left;
+	  width: 100%;
+}
+	.pager ul li 
+	{
+	  list-style:none;
+	  float:left;
+	  width:20px;
+	  height:20px;
+	  border-radius:35px;
+	  border:1px solid white;
+	  background:black;
+	}
+	.pager ul li:hover,.pager ul li.active
+	{
+	  background:green;
+	}
+
+	.pager ul li a, .pager ul li a:hover 
+	{
+	  color: white;
+	  text-decoration: none;
+	  text-align: center;
+	  width: 100%;
+	  display: block;
+	  line-height: 127px;
+	} 
