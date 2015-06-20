@@ -13,7 +13,7 @@
 #slider .slide {
     float: left;
     list-style-type: none;
-    width:100%;
+    width:980px;
     height:auto;
 }
 .pager {
