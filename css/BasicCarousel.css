@@ -1,5 +1,5 @@
 	 #slider {
-  width: 560px;
+  width: 980px;
   overflow: hidden;
   float: left;
 }
@@ -13,7 +13,7 @@
 #slider .slide {
     float: left;
     list-style-type: none;
-    width: 560px;
+    width:100%;
     height:auto;
 }
 .pager {
