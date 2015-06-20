@@ -17,8 +17,9 @@
     //cache DOM elements
 	
     var $slider = this;
+	 var $slides = $('.slide', $slider)
     var $slideContainer = $('.slides', $slider);
-	    $slideContainer.css({'width':width*100+'%'});
+	    $slideContainer.css({'width':$slides.length*width+'px'});
     var $slides = $('.slide', $slider)
     var interval;
 
