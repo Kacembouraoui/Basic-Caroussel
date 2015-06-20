@@ -1,0 +1,104 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js" > </script>
+    <script src="js/BasicSlider.js" > </script>
+    <link rel='stylesheet' href="css/BasicCarousel.css" type="text/css" />
+    </script>
+	<style>
+	 #slider {
+  width: 560px;
+  overflow: hidden;
+  float: left;
+}
+
+#slider .slides {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 560px;
+    height:auto;
+}
+.pager {
+	  float: left;
+	  clear:both;
+}
+.pager ul {
+	  margin: 0px;
+	  padding: 0px;
+	  float: left;
+	  width: 100%;
+}
+	.pager ul li 
+	{
+	  list-style:none;
+	  float:left;
+	  width:20px;
+	  height:20px;
+	  border-radius:35px;
+	  border:1px solid white;
+	  background:black;
+	}
+	.pager ul li:hover,.pager ul li.active
+	{
+	  background:green;
+	}
+
+	.pager ul li a, .pager ul li a:hover 
+	{
+	  color: white;
+	  text-decoration: none;
+	  text-align: center;
+	  width: 100%;
+	  display: block;
+	  line-height: 127px;
+	} 
+	</style>
+</head>
+<body>
+    
+            <div id="slider">
+                <ul class="slides">
+                    
+                  <li class="slide"  data-range="2">
+				       <img src="img/image1.png" alt="1" />
+				  </li>
+				  <li class="slide" data-range="2">
+					  <img src="img/image2.png" alt="2" />
+				  </li  >
+				  <li class="slide" data-range="3">
+					  <img src="img/image1.png" alt="3" />
+				  </li  >
+	 			  <li class="slide" data-range="4">
+					  <img src="img/image2.png" alt="4" />
+				  </li >
+				  <li class="slide"  data-range="2">
+				       <img src="img/image1.png" alt="1" />
+				  </li>
+				  <li class="slide" data-range="2">
+					  <img src="img/image2.png" alt="2" />
+				  </li  >
+				  <li class="slide" data-range="3">
+					  <img src="img/image1.png" alt="3" />
+				  </li  >
+	 			  <li class="slide" data-range="4">
+					  <img src="img/image2.png" alt="4" />
+				  </li >
+                </ul>
+            </div>
+		   <div  class="pager" >
+		     
+		   </div>
+ </div>
+ 
+
+</body>
+ <script>
+	     $('#slider').BoraSlider({
+		  pause:2000
+		 });
+	  </script>
