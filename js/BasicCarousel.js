@@ -2,7 +2,7 @@
  Plugin name : BasicCarousel
  Author : Bouraoui KACEM  ** Front-End Developer
  */
-
+(function ( $ ) {
 $.fn.BasicCarousel = function(option) {
 
     //settings for slider
@@ -91,3 +91,4 @@ $.fn.BasicCarousel = function(option) {
     startCarousel();
 
 }
+}( jQuery ));
