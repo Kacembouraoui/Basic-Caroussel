@@ -3,17 +3,21 @@
  Author : Bouraoui KACEM  ** Front-End Developer
  */
 (function ( $ ) {
-$.fn.BasicCarousel = function(option) {
+$.fn.BasicCarousel = function(options) {
 
     //settings for slider
+    var settings = $.extend({
+        // These are the defaults.
+        animationSpeed: 1000,
+        pause: 2000,
+        pager: true
+    }, options );
 
-
-    //Default settings for slider
     var width = this.width();
-    var animationSpeed = option.animationSpeed ||1000;
-    var pause = option.pause || 2000;
+    var animationSpeed = settings.animationSpeed;
+    var pause = settings.pause ;
     var currentSlide = 1;
-    var pager= option.pager ;
+    var pager= settings.pager ;
     //cache DOM elements
 
     var $slider = this;
