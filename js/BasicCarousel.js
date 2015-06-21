@@ -9,30 +9,30 @@
 	  
    
     //Default settings for slider
-    var width = $('#slider').width();
+    var width = this.width();
     var animationSpeed = option.animationSpeed ||1000;
     var pause = option.pause || 2000;
     var currentSlide = 1;
-
+    var pager= option.pager ;
     //cache DOM elements
 	
     var $slider = this;
 	 var $slides = $('.slide', $slider)
-    var $slideContainer = $('.slides', $slider);
-	    $slideContainer.css({'width':$slides.length*width+'px'});
+    var $CarouselContainer = $('.slides', $slider);
+	    $CarouselContainer.css({'width':$slides.length*width+'px'});
     var $slides = $('.slide', $slider)
     var interval;
 
-    function startSlider() {
+    function startCarousel() {
         interval = setInterval(function() {
 		    if(currentSlide==$slides.length)
 			{
 			   currentSlide=0;
 			}
-		    $slideContainer.animate({'margin-left': '-'+width*(currentSlide)+"px"}, animationSpeed, function() {
+		    $CarouselContainer.animate({'margin-left': '-'+width*(currentSlide)+"px"}, animationSpeed,"linear", function() {
 			    if((currentSlide) > $slides.length) {
 				   currentSlide = 1;
-                   $slideContainer.css('margin-left', 0);
+                   $CarouselContainer.css('margin-left', 0);
 				   $('.pager li').removeClass('active');
 				$('.pager li a[href="#'+currentSlide+'"]').parent('li').addClass('active');
                 }else
@@ -50,7 +50,7 @@
     function pauseSlider() {
         clearInterval(interval);
     }
-    //build pager
+    //build pager by creat the pagination items according to the number of slide
 	function Pagination()
 	{
 	  var slideNbr=$('#slider .slide').length;
@@ -67,20 +67,27 @@
 	  
 	
 	}
-	Pagination();
+    //Define events for stop and restart  Slider 
     $slideContainer
         .on('mouseenter', pauseSlider)
         .on('mouseleave', startSlider);
-	
-     $('.pager li').bind('click',function(){
-	        pauseSlider();
-	        currentSlide=$(this).find('a').attr('href').split('#')[1];
-		    $('.pager li').removeClass('active');
-		    $('.pager li a[href="#'+currentSlide+'"]').parent('li').addClass('active');
-		    currentSlide=currentSlide-1;
-			$slideContainer.animate({'margin-left': '-'+width*(currentSlide)+"px"}, animationSpeed);
-			startSlider();		
-	 });
-    startSlider();
+    //Creat the pagination items and bind click event if option.pager is equal to true   
+	if(pager )
+       {
+       	        //the pagination items
+	        Pagination();
+	        //bind click event 
+	        $('.pager li').bind('click',function(){
+	            pauseSlider();
+	            currentSlide=$(this).find('a').attr('href').split('#')[1];
+	            $('.pager li').removeClass('active');
+	            $('.pager li a[href="#'+currentSlide+'"]').parent('li').addClass('active');
+	            currentSlide=currentSlide-1;
+	            $slideContainer.animate({'margin-left': '-'+width*(currentSlide)+"px"}, animationSpeed);
+	            startCarousel();
+	        });
+       }
+    
+    startCarousel();
 
 }
