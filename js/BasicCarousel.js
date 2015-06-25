@@ -82,7 +82,7 @@ $.fn.BasicCarousel = function(options) {
         Pagination();
         //bind click event
         $('.pager li').bind('click',function(){
-            pauseSlider();
+            pauseCarousel();
             currentSlide=$(this).find('a').attr('href').split('#')[1];
             $('.pager li').removeClass('active');
             $('.pager li a[href="#'+currentSlide+'"]').parent('li').addClass('active');
