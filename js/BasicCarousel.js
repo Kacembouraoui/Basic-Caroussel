@@ -59,7 +59,7 @@ $.fn.BasicCarousel = function(options) {
     {
         var slideNbr=$('#slider .slide').length;
         $('.pager ').append("<ul></ul>");
-        for (i = 1; i < slideNbr+1; i++) {
+        for (var i = 1; i < slideNbr+1; i++) {
             if(i==1)
             {
                 $('.pager ul').append('<li class="active"><a href="#'+i+'" ></a></li>');
